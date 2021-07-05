@@ -16,20 +16,28 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        MyView myView = new MyView(this);
-        setContentView(myView);
+        setContentView(R.layout.activity_main);
     }
 
-    public class MyView extends View{
-        public MyView(Context context){
-            super(context);
-            p1.setColor(Color.RED);
-            p1.setTextSize(40);
-        }
-        public void onDraw(Canvas canvas){
-            canvas.drawCircle(100, 100, 100, p1);
-            canvas.drawRect(0, 300, 300, 400, p1);
-            canvas.drawText("View 클래스 상속받고  onDraw 활용하기", 0, 500, p1);
-        }
+    public void increaseValue(View v){
+        MyView.radius+=2;
+    }
+    public void decreaseValue(View v){
+        MyView.radius-=2;
+    }
+    public void setRed(View v){
+        MyView.whatColor=1;
+    }
+    public void setBlue(View v){
+        MyView.whatColor=2;
+    }
+    public void setYellow(View v){
+        MyView.whatColor=3;
+    }
+    public void setGreen(View v){
+        MyView.whatColor=4;
+    }
+    public void setBlack(View v){
+        MyView.whatColor=0;
     }
 }
